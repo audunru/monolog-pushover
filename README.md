@@ -8,15 +8,13 @@ Monolog (a PHP logging library) uses _handlers_ to send log messages to various 
 
 This package uses [Guzzle](https://docs.guzzlephp.org/) by default, but you can replace that with another PSR compatible HTTP client if you wish.
 
-# Installation
-
-## Step 1: Install with Composer
+# Installation (for use with Laravel)
 
 ```bash
-composer require audunru/monolog-pushover
+composer require audunru/monolog-pushover spatie/laravel-package-tools
 ```
 
-## Step 2: Publish configuration
+## Publish configuration
 
 Publish the configuration file by running:
 
@@ -24,7 +22,7 @@ Publish the configuration file by running:
 php artisan vendor:publish --tag=monolog-pushover-config
 ```
 
-# Configuration
+## Edit configuration
 
 Add pushover to the channels section of `config/logging.php`:
 
@@ -45,6 +43,12 @@ Log something to Pushover:
 
 ```php
 Log::channel("pushover")->error("Test");
+```
+
+# Installation (without Laravel)
+
+```bash
+composer require audunru/monolog-pushover
 ```
 
 # Alternatives
