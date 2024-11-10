@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/audunru/monolog-pushover/actions/workflows/validate.yml/badge.svg)](https://github.com/audunru/monolog-pushover/actions/workflows/validate.yml)
 [![Coverage Status](https://coveralls.io/repos/github/audunru/monolog-pushover/badge.svg?branch=main)](https://coveralls.io/github/audunru/monolog-pushover?branch=main)
-[![StyleCI](https://github.styleci.io/repos/12345/shield?branch=main)](https://github.styleci.io/repos/12345)
+[![StyleCI](https://github.styleci.io/repos/886351055/shield?branch=main)](https://github.styleci.io/repos/886351055)
 
 Monolog (a PHP logging library) uses _handlers_ to send log messages to various destinations. This is one such handler, for sending Monolog log messages to [Pushover](https://pushover.net).
 
