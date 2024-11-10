@@ -1,25 +1,34 @@
-# Pushover handler for Monolog in Laravel
+# Pushover handler for Monolog
 
 [![Build Status](https://github.com/audunru/monolog-pushover-http/actions/workflows/validate.yml/badge.svg)](https://github.com/audunru/monolog-pushover-http/actions/workflows/validate.yml)
-[![Coverage Status](https://coveralls.io/repos/github/audunru/monolog-pushover-http/badge.svg?branch=master)](https://coveralls.io/github/audunru/monolog-pushover-http?branch=master)
-[![StyleCI](https://github.styleci.io/repos/415400658/shield?branch=master)](https://github.styleci.io/repos/415400658)
+[![Coverage Status](https://coveralls.io/repos/github/audunru/monolog-pushover-http/badge.svg?branch=main)](https://coveralls.io/github/audunru/monolog-pushover-http?branch=main)
+[![StyleCI](https://github.styleci.io/repos/12345/shield?branch=main)](https://github.styleci.io/repos/12345)
 
-Retrieve secrets from AWS Secrets Manager and override config variables in Laravel.
+Monolog (a PHP logging library) uses _handlers_ to send log messages to various destinations. This is one such handler, for sending Monolog log messages to [Pushover](https://pushover.net).
 
-As an example, you could store your database password in AWS Secrets Manager instead of your .env file. This package does not modify your .env file or config files. Instead, the configuration values are set using Laravel's `config()` helper right after your application has started.
+This package uses [Guzzle](https://docs.guzzlephp.org/) by default, but you can replace that with another PSR compatible HTTP client if you wish.
 
 # Installation
+
+## Step 1: Install with Composer
 
 ```bash
 composer require audunru/monolog-pushover-http
 ```
 
-# Configuration
+## Step 2: Publish configuration
 
-Add pushover in `config/logging.php`, then configure Laravel to use pushover as the default logging channel.
+Publish the configuration file by running:
 
 ```php
-'default' => env('LOG_CHANNEL', 'pushover'),
+php artisan vendor:publish --tag=monolog-pushover-http-config
+```
+
+# Configuration
+
+Add pushover to the channels section of `config/logging.php`:
+
+```php
 'channels' => [
     'pushover' => [
         'driver'  => 'monolog',
@@ -32,6 +41,14 @@ Add pushover in `config/logging.php`, then configure Laravel to use pushover as 
 ],
 ```
 
+Log something to Pushover:
+
+```php
+Log::channel("pushover")->error("Test");
+```
+
 # Alternatives
 
-[AWS Secrets Manager](https://github.com/TappNetwork/laravel-aws-secrets-manager)
+[jonshawpzbp/monolog-pushovercurl](https://github.com/JonShawPZBP/MonologPushoverCurl)
+
+[Monolog's own PushoverHandler](https://github.com/Seldaek/monolog/blob/main/src/Monolog/Handler/PushoverHandler.php)
