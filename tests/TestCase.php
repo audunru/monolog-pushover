@@ -7,6 +7,9 @@ use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
+    /**
+     * @SuppressWarnings("unused")
+     */
     protected function getPackageProviders($app)
     {
         return [MonologPushoverProvider::class];

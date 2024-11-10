@@ -16,6 +16,10 @@ class PushoverHandler extends MonologPushoverHandler
 {
     protected const PUSHOVER_URL = 'https://api.pushover.net/1/messages.json';
 
+    /**
+     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
     public function __construct(
         private ClientInterface $httpClient,
         private RequestFactoryInterface $requestFactory,
