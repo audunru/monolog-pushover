@@ -23,7 +23,7 @@ Add pushover in `config/logging.php`, then configure Laravel to use pushover as 
 'channels' => [
     'pushover' => [
         'driver'  => 'monolog',
-        'handler' => audunru\MonologPushoverHttp\Handlers\PushoverHandler::class,
+        'handler' => \audunru\MonologPushoverHttp\Handlers\PushoverHandler::class,
         'with'    => [
             'token' => env('PUSHOVER_TOKEN'),
             'users' => env('PUSHOVER_USER'),
