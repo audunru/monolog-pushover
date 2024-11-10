@@ -1,23 +1,23 @@
 <?php
 
-namespace audunru\MonologPushoverHttp;
+namespace audunru\MonologPushover;
 
-use audunru\MonologPushoverHttp\Handlers\PushoverHandler;
+use audunru\MonologPushover\Handlers\PushoverHandler;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class MonologPushoverHttpProvider extends PackageServiceProvider
+class MonologPushoverProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('monolog-pushover-http')
+            ->name('monolog-pushover')
             ->hasConfigFile();
     }
 
     public function registeringPackage()
     {
-        $bindings = config('monolog-pushover-http.bindings', []);
+        $bindings = config('monolog-pushover.bindings', []);
 
         foreach ($bindings as $abstract => $implementation) {
             $this->app->when(PushoverHandler::class)

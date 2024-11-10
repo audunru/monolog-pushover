@@ -1,13 +1,13 @@
 <?php
 
-namespace audunru\MonologPushoverHttp\Tests\Unit;
+namespace audunru\MonologPushover\Tests\Unit;
 
-use audunru\MonologPushoverHttp\Handlers\PushoverHandler;
+use audunru\MonologPushover\Handlers\PushoverHandler;
+use audunru\MonologPushover\Tests\TestCase;
 use Carbon\Carbon;
 use Carbon\CarbonImmutable;
 use Monolog\Level;
 use Monolog\LogRecord;
-use Orchestra\Testbench\TestCase;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;

@@ -1,5 +1,5 @@
 {
-  "name": "audunru/monolog-pushover-http",
+  "name": "audunru/monolog-pushover",
   "description": "Monolog handler that uses a HTTP client to log messages to Pushover",
   "keywords": [
     "laravel",
@@ -39,18 +39,18 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "audunru\\MonologPushoverHttp\\": "src/"
+      "audunru\\MonologPushover\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "audunru\\MonologPushoverHttp\\Tests\\": "tests/"
+      "audunru\\MonologPushover\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "audunru\\MonologPushoverHttp\\MonologPushoverHttpProvider"
+        "audunru\\MonologPushover\\MonologPushoverProvider"
       ]
     }
   },

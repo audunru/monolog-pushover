@@ -1,7 +1,7 @@
 # Pushover handler for Monolog
 
-[![Build Status](https://github.com/audunru/monolog-pushover-http/actions/workflows/validate.yml/badge.svg)](https://github.com/audunru/monolog-pushover-http/actions/workflows/validate.yml)
-[![Coverage Status](https://coveralls.io/repos/github/audunru/monolog-pushover-http/badge.svg?branch=main)](https://coveralls.io/github/audunru/monolog-pushover-http?branch=main)
+[![Build Status](https://github.com/audunru/monolog-pushover/actions/workflows/validate.yml/badge.svg)](https://github.com/audunru/monolog-pushover/actions/workflows/validate.yml)
+[![Coverage Status](https://coveralls.io/repos/github/audunru/monolog-pushover/badge.svg?branch=main)](https://coveralls.io/github/audunru/monolog-pushover?branch=main)
 [![StyleCI](https://github.styleci.io/repos/12345/shield?branch=main)](https://github.styleci.io/repos/12345)
 
 Monolog (a PHP logging library) uses _handlers_ to send log messages to various destinations. This is one such handler, for sending Monolog log messages to [Pushover](https://pushover.net).
@@ -13,7 +13,7 @@ This package uses [Guzzle](https://docs.guzzlephp.org/) by default, but you can 
 ## Step 1: Install with Composer
 
 ```bash
-composer require audunru/monolog-pushover-http
+composer require audunru/monolog-pushover
 ```
 
 ## Step 2: Publish configuration
@@ -21,7 +21,7 @@ composer require audunru/monolog-pushover-http
 Publish the configuration file by running:
 
 ```php
-php artisan vendor:publish --tag=monolog-pushover-http-config
+php artisan vendor:publish --tag=monolog-pushover-config
 ```
 
 # Configuration
@@ -32,7 +32,7 @@ Add pushover to the channels section of `config/logging.php`:
 'channels' => [
     'pushover' => [
         'driver'  => 'monolog',
-        'handler' => \audunru\MonologPushoverHttp\Handlers\PushoverHandler::class,
+        'handler' => \audunru\MonologPushover\Handlers\PushoverHandler::class,
         'with'    => [
             'token' => env('PUSHOVER_TOKEN'),
             'users' => env('PUSHOVER_USER'),

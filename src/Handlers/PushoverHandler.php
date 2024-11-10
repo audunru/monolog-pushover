@@ -1,6 +1,6 @@
 <?php
 
-namespace audunru\MonologPushoverHttp\Handlers;
+namespace audunru\MonologPushover\Handlers;
 
 use Monolog\Handler\PushoverHandler as MonologPushoverHandler;
 use Monolog\Level;
