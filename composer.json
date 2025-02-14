@@ -15,12 +15,10 @@
       "email": "audun@rundberg.no"
     }
   ],
-  "suggest": {
+  "require": {
+    "php": "^8.2",
     "laravel/framework": "^11.0",
     "spatie/laravel-package-tools": "^1.9"
-  },
-  "require": {
-    "php": "^8.2"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.0",
@@ -28,8 +26,7 @@
     "php-coveralls/php-coveralls": "^2.2",
     "phpmd/phpmd": "^2.10",
     "phpunit/phpunit": "^11.0",
-    "roave/security-advisories": "dev-latest",
-    "spatie/laravel-package-tools": "^1.9"
+    "roave/security-advisories": "dev-latest"
   },
   "config": {
     "optimize-autoloader": true,
