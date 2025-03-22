@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/audunru/monolog-pushover/compare/v0.1.1...v1.0.0) (2025-03-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* laravel 12 support ([#18](https://github.com/audunru/monolog-pushover/issues/18))
+
+### Features
+
+* laravel 12 support ([#18](https://github.com/audunru/monolog-pushover/issues/18)) ([f471769](https://github.com/audunru/monolog-pushover/commit/f471769b37a16376317c4b3d778e6bf7f1894925))
+
 ## [0.1.1](https://github.com/audunru/monolog-pushover/compare/v0.1.0...v0.1.1) (2024-11-10)
 
 
