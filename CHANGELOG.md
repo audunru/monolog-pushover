@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/audunru/monolog-pushover/compare/v1.0.1...v1.0.2) (2025-11-15)
+
+
+### Bug Fixes
+
+* force semantic release ([5ead2fe](https://github.com/audunru/monolog-pushover/commit/5ead2fed4c9e61c95f1446cc12b91cf29a335365))
+
 # Changelog
 
 ## [1.0.0](https://github.com/audunru/monolog-pushover/compare/v0.1.1...v1.0.0) (2025-03-22)
