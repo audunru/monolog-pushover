@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/audunru/monolog-pushover/compare/v1.0.2...v2.0.0) (2026-03-24)
+
+
+### Features
+
+* laravel 13 support ([#53](https://github.com/audunru/monolog-pushover/issues/53)) ([b75fef0](https://github.com/audunru/monolog-pushover/commit/b75fef08a9ced2a1f2a90d82b3d58d95be8a85b0))
+
+
+### BREAKING CHANGES
+
+* Laravel 13 is now the minimum required version, which also means PHP 8.3 is required
+
 ## [1.0.2](https://github.com/audunru/monolog-pushover/compare/v1.0.1...v1.0.2) (2025-11-15)
 
 
