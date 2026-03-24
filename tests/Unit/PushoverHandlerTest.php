@@ -16,7 +16,7 @@ use Psr\Http\Message\StreamInterface;
 
 class PushoverHandlerTest extends TestCase
 {
-    public function testPushoverHandlerSendsCorrectData()
+    public function test_pushover_handler_sends_correct_data()
     {
         Carbon::setTestNow(Carbon::parse('2019-10-13 12:13:14'));
 
@@ -60,7 +60,7 @@ class PushoverHandlerTest extends TestCase
         );
 
         $record = new LogRecord(
-            datetime: new CarbonImmutable(),
+            datetime: new CarbonImmutable,
             channel: 'pushover',
             level: Level::Critical,
             message: 'Vandelay Industries is a success!',

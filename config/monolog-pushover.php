@@ -11,8 +11,8 @@ return [
      * Bind PSR interfaces to Guzzle's implementations
      */
     'bindings' => [
-        ClientInterface::class         => Client::class,
+        ClientInterface::class => Client::class,
         RequestFactoryInterface::class => HttpFactory::class,
-        StreamFactoryInterface::class  => HttpFactory::class,
+        StreamFactoryInterface::class => HttpFactory::class,
     ],
 ];

@@ -14,7 +14,7 @@ use ReflectionProperty;
 
 class PushoverHandler extends MonologPushoverHandler
 {
-    protected const PUSHOVER_URL = 'https://api.pushover.net/1/messages.json';
+    protected const string PUSHOVER_URL = 'https://api.pushover.net/1/messages.json';
 
     /**
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
@@ -86,7 +86,6 @@ class PushoverHandler extends MonologPushoverHandler
     private function getContent(LogRecord $record): string
     {
         $reflectionMethod = new ReflectionMethod(MonologPushoverHandler::class, 'buildContent');
-        $reflectionMethod->setAccessible(true);
 
         return $reflectionMethod->invoke($this, $record);
     }
@@ -94,7 +93,6 @@ class PushoverHandler extends MonologPushoverHandler
     private function getUsers(): array
     {
         $reflectionProperty = new ReflectionProperty(MonologPushoverHandler::class, 'users');
-        $reflectionProperty->setAccessible(true);
 
         return $reflectionProperty->getValue($this);
     }
@@ -102,7 +100,6 @@ class PushoverHandler extends MonologPushoverHandler
     private function setUser(?string $user): void
     {
         $reflectionProperty = new ReflectionProperty(MonologPushoverHandler::class, 'user');
-        $reflectionProperty->setAccessible(true);
         $reflectionProperty->setValue($this, $user);
     }
 }
