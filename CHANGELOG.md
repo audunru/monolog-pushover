@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/audunru/monolog-pushover/compare/v2.0.0...v2.1.0) (2026-05-25)
+
+
+### Features
+
+* add Trivy security scan workflow ([#59](https://github.com/audunru/monolog-pushover/issues/59)) ([cecdea8](https://github.com/audunru/monolog-pushover/commit/cecdea86c0169f8b7f0d59aae113940459810a2b))
+
 # [2.0.0](https://github.com/audunru/monolog-pushover/compare/v1.0.2...v2.0.0) (2026-03-24)
 
 
