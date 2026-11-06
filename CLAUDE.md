@@ -25,10 +25,12 @@ The concrete handler is `src/Handlers/PushoverHandler.php`. It extends Monolog's
 
 `MonologPushoverProvider` publishes config and reads `monolog-pushover.bindings` to wire PSR interface → implementation bindings contextually for `PushoverHandler`. Config key: `monolog-pushover`. Publish tag: `monolog-pushover-config`.
 
+The bindings are read in `registeringPackage()`, which spatie/laravel-package-tools calls **before** it merges the package config. So only a published `config/monolog-pushover.php` in the app has an effect there; the package defaults are not yet loaded at that point.
+
 ## Dependencies
 
 - Internal: none
-- External: defaults to `guzzlehttp/guzzle` + `guzzlehttp/psr7` (via config bindings); any PSR-18/PSR-17 compatible client can be substituted by changing `config/monolog-pushover.php`
+- External: defaults to `guzzlehttp/guzzle` + `guzzlehttp/psr7` (via config bindings; not in `require`, they come with `laravel/framework`); any PSR-18/PSR-17 compatible client can be substituted by changing `config/monolog-pushover.php`
 
 ## Testing
 
@@ -36,7 +38,7 @@ The concrete handler is `src/Handlers/PushoverHandler.php`. It extends Monolog's
 composer test
 ```
 
-Tests use Mockery to mock the PSR HTTP interfaces and assert the correct POST body is sent to `https://api.pushover.net/1/messages.json`. No real HTTP calls are made. See `tests/Unit/PushoverHandlerTest.php`.
+Tests use Mockery to mock the PSR HTTP interfaces and assert the correct POST body is sent to `https://api.pushover.net/1/messages.json`. No real HTTP calls are made. See `tests/Unit/PushoverHandlerTest.php`. `tests/Unit/MonologPushoverProviderTest.php` checks the merged default config.
 
 ## Conventions / Gotchas
 
