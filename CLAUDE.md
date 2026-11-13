@@ -25,7 +25,7 @@ The concrete handler is `src/Handlers/PushoverHandler.php`. It extends Monolog's
 
 `MonologPushoverProvider` publishes config and reads `monolog-pushover.bindings` to wire PSR interface → implementation bindings contextually for `PushoverHandler`. Config key: `monolog-pushover`. Publish tag: `monolog-pushover-config`.
 
-The bindings are read in `registeringPackage()`, which spatie/laravel-package-tools calls **before** it merges the package config. So only a published `config/monolog-pushover.php` in the app has an effect there; the package defaults are not yet loaded at that point.
+The bindings are read in `packageRegistered()`, which spatie/laravel-package-tools calls **after** it merges the package config. So the package defaults apply also when the app did not publish `config/monolog-pushover.php`. Do not move the loop to `registeringPackage()`: that hook runs before the merge, and the bindings are empty there.
 
 ## Dependencies
 
