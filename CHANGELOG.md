@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/audunru/monolog-pushover/compare/v2.1.0...v2.1.1) (2026-11-13)
+
+
+### Bug Fixes
+
+* apply default PSR bindings when the config is not published ([#84](https://github.com/audunru/monolog-pushover/issues/84)) ([69fd169](https://github.com/audunru/monolog-pushover/commit/69fd1693ccaabf3404f0e4fc9ff2ee322876d3a6))
+
 # [2.1.0](https://github.com/audunru/monolog-pushover/compare/v2.0.0...v2.1.0) (2026-05-25)
 
 
