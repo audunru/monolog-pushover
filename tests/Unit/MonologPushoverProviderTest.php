@@ -2,6 +2,7 @@
 
 namespace audunru\MonologPushover\Tests\Unit;
 
+use audunru\MonologPushover\Handlers\PushoverHandler;
 use audunru\MonologPushover\Tests\TestCase;
 
 class MonologPushoverProviderTest extends TestCase
@@ -20,5 +21,12 @@ class MonologPushoverProviderTest extends TestCase
             ],
             $config
         );
+    }
+
+    public function test_pushover_handler_resolves_from_container_with_default_bindings()
+    {
+        $handler = $this->app->make(PushoverHandler::class, ['token' => 't', 'users' => 'u']);
+
+        $this->assertInstanceOf(PushoverHandler::class, $handler);
     }
 }

@@ -15,7 +15,7 @@ class MonologPushoverProvider extends PackageServiceProvider
             ->hasConfigFile();
     }
 
-    public function registeringPackage()
+    public function packageRegistered()
     {
         $bindings = config('monolog-pushover.bindings', []);
 
